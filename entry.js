@@ -6,10 +6,6 @@ const DataBase = require("./models/database");
 const path = require("path");
 const Port = process.env.PORT || 8080;
 const userRoutes = require("./routes/User");
-const productRoutes = require("./routes/Products");
-const investmentRoutes = require("./routes/Investment");
-const vendorRoutes = require("./routes/Vendors");
-const orderRoutes = require("./routes/Orders");
 
 app.use(cors());
 app.get("/", express.static(path.join(__dirname, "./images")));
@@ -26,10 +22,6 @@ app.use((req, res, next) => {
 });
 
 app.use(userRoutes);
-app.use(productRoutes);
-app.use(investmentRoutes);
-app.use(vendorRoutes);
-app.use(orderRoutes);
 
 app.get("/tes", (req, res) => {
   res.send("here we are!!!");
